@@ -24,7 +24,8 @@ example with aws driver
 
 4) run 
 
-```bash make
+```bash 
+  $ make
 ```
 
 ## Clean 
