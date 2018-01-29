@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  web:
+    build: ./nginx
+    links:
+      - wordpress
+    volumes:
+      - nginx-certs:/etc/nginx/certs:ro
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+
+  wordpress:
+    image: wordpress
+    restart: always
+    volumes:
+      - '/home/ubuntu/www:/var/www/html'
+    environment:
+      WORDPRESS_DB_PASSWORD: example
+
+  mysql:
+    image: mysql:5.7
+    restart: always
+    volumes:
+       - /home/ubuntu/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+
+volumes:
+  nginx-certs:

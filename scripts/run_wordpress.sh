@@ -1,0 +1,1 @@
+docker-compose -f /tmp/wordpress.yml up --build -d

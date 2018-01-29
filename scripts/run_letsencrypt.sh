@@ -1,0 +1,1 @@
+docker-compose -f /tmp/letsencrypt.yml up --build -d
